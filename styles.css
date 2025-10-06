@@ -1,0 +1,129 @@
+:root{
+  --clr-bg: #fff;
+  --clr-text: #111;
+  --clr-primary: #3b82f6;
+  --clr-accent: #ca24cf;
+  --font-body: 'Inter', system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+
+  --container: 553px;
+  --space-1:4px; --space-2:8px; --space-3:12px;
+  --space-4:16px; --space-5:24px; --space-6:32px; --space-7:48px;
+}
+
+
+body{
+  font-family: var(--font-body); 
+  line-height: 1.5;
+  color: var(--clr-text);
+  background-color: var(--clr-bg);
+}
+
+.container{/* Layoutcontainern */
+  width:min(100% var(--container));
+  margin-inline:auto;
+}
+/* Header */
+.site-header{
+  padding-top: 8px;
+}
+.header-bar{
+  display:flex;
+  justify-content: space-between;
+  padding-inline: 16px;
+}
+
+.nollnollsju{
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.8rem;
+  background: linear-gradient(90deg, #3BC8F3 0%, #7D6AF7 50%, #D64AB5 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0;
+}
+
+.namn{
+  display: block;
+  font-size: 1rem;
+  font-weight: 700;
+  margin-left: 0.23rem;
+  background: linear-gradient(90deg, #3BC8F3 0%, #7D6AF7 50%, #D64AB5 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.brand{display: flex; align-items: center; gap: 8px; color: inherit; text-decoration: none; }
+.logo{color: var(--clr-accent); font-weight: 800;}
+.logo-name{
+  font-weight: 600;
+  opacity: .9;
+}
+.nav-toggle{ 
+  display: flex;
+  background: none;
+  border:0; 
+  font-size: 22px; 
+  line-height: 1;
+}
+
+.site-nav{ text-align: center; margin-top: 10px; }
+.nav-list{ list-style: none; margin:0; padding:0; }
+.nav-list li + li{ margin-top:10px;}
+.nav-list a{ color:inherit; text-decoration:none; font-size: 1.1rem; font-weight: 600; }
+.nav-list a:hover{ text-decoration:underline; }
+.twitter{ width:24px; height:24px; }
+.linkedin{ width:24px; height:24px; }
+.github{ width:24px; height:24px; }
+
+/* Vertikal meny (mobil) */
+.social-list{
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+  margin: 1.1rem 0 2rem; padding:0;
+}
+.social-list a{ color:inherit; text-decoration:none; font-size: 2rem; }
+
+/* Hero + bild */
+.hero{ padding-top:8.5rem;}
+
+.Hej{ 
+  font-size: 2rem;
+  line-height: 1.2;
+  font-weight: 800; 
+}
+h1{
+  margin: 0 0 0.5rem;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  font-weight: 800; 
+}
+.highlight{
+  background: linear-gradient(90deg, #22B9F2 0%, #5E5EEA 100%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 700;
+}
+.avatar-ring{
+  width: 180px;
+  border-radius:50%;   
+  background: conic-gradient(#ca24cf, #53a3d8, #389cbb, #d42fb1);
+  padding: 0.5rem;            /* vit inner-ring */                   /* tjocklek på vita ringen */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.avatar-ring img{
+  width:100%;
+  height:100%;
+  border-radius:50%;
+  padding-right: 10px;
+  padding-left: 10px;              /* vit inner-ring */                      /* tjocklek på vita ringen */
+  display:flex;
+  filter: grayscale(100%);
+}
+
+
+
+
