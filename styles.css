@@ -11,7 +11,7 @@
   --button-bg: #d7ffe0;
   --button-text: #018c0f;
   --radius: 9999px;
-  --container: 553px;
+  --container: 70rem;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -43,24 +43,34 @@ h3.role {
   margin: 0;
 }
 
-.container {
-  /* Layoutcontainern */
+.container {  /* Layoutcontainern */
   width: min(100%, var(--container));
   margin-inline: auto;
-  padding-inline: var(--space-4);
+  padding-inline: var(--space-6);
 }
 
 /* Header */
 .site-header {
   padding-top: 8px;
 }
+
+.site-header a, .nav-toggle {
+  text-decoration: none;
+}
+
+.nav-list-box {
+  display: none;
+}
+
 .header-bar {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   padding-inline: 2rem;
   margin-bottom: 1rem;
-  
+  margin-left: 1rem;
+  flex-wrap: wrap;
 }
 
 .nollnollsju {
@@ -86,13 +96,7 @@ h3.role {
   -webkit-text-fill-color: transparent;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  color: inherit;
-  text-decoration: none;
-}
+
 .logo {
   color: var(--clr-accent);
   font-weight: 800;
@@ -114,6 +118,8 @@ h3.role {
 .site-nav {
   text-align: center;
   margin-top: 1rem;
+  width: 100%;
+  order: 3;
 }
 .nav-list {
   list-style: none;
@@ -133,16 +139,19 @@ h3.role {
   text-decoration: underline;
 }
 .twitter {
-  width: 24px;
-  height: 24px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
 .linkedin {
-  width: 24px;
-  height: 24px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
 .github {
-  width: 24px;
-  height: 24px;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
 }
 
 /* Vertikal meny (mobil) */
@@ -308,6 +317,7 @@ li {
 .h1-projects {
   display: grid;
   grid-column: 1 / -1;
+  margin-left: 2rem;
 
 }
 
@@ -391,7 +401,7 @@ li {
 .card-footer {
   display: flex;
   align-items: space-between;
-  gap: var(--space-3);
+  gap: var(--space-7);
   margin-top: 0;
 }
 
@@ -417,6 +427,7 @@ li {
   text-decoration: underline;
   color: var(--clr-text);
   white-space: nowrap;
+  margin-left: 7rem;
 } 
 
 .icon {
@@ -486,15 +497,16 @@ li {
 }
 
 @media (min-width: 70rem) {
-  .container {
-    width: min(100%, 70rem);      /* ≈1120px som i referensen */
-    margin-inline: auto;
-    padding-inline: 0;
-  }
-  
+ 
   .nav-list-box {
     display: flex;
     flex-direction: row;
+  }
+
+  .site-header {
+    display: flex;
+    justify-content: center;
+    padding-block: 1.5rem;
   }
 
   .header-bar {
@@ -502,51 +514,94 @@ li {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    width: 100%;
+    max-width: 70rem;
+    padding-inline: 2rem;
+    gap: 3rem;
+    flex-wrap: nowrap;
+  }
+
+  .site-header .nav-list {
+    margin-left: 0 !important;            /* överstyr ev. tidigare regler */
+    flex: 0 0 auto;                       /* behåll naturlig bredd */
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+  }
+
+  .nollnollsju {
+    font-size: 1.75rem;
+    font-weight: 800;
+    margin-bottom: 0.4rem;
+    
+  }
+
+  .namn {
+    font-size: 1rem;
+    font-weight: 800;
   }
 
   .site-nav {
     display: flex;
-    gap: 2rem;
-    margin-left: auto;
+    align-items: center;
+    gap: 3rem;
+    margin-left: 0;
+    flex: 0 0 auto;
+    width: auto;
+    order: 0;
     margin-top: 0;
   }
 
-   /* Gör menyn horisontell i desktop */
-  .nav-menu {
+  
+  .nav-list  {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    align-items: center;
     gap: 2rem;
   }
 
-    .nav-social {
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      gap: 2rem;
+  .nav-list a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
   }
 
-  .nav-list {
-    display: flex;
-    flex-direction: row;     /* rad-layout för listan */
-    gap: 2rem;
+  .nav-list a:hover {
+    color: var(--clr-primary);
   }
 
-  .nav-list li + li {
+
+  .site-header .nav-list li + li {
     margin-top: 0;           /* ta bort vertikalt mellanrum */
   }
 
+  .social-list{
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    margin: 0;              /* nollställ 1.1rem 0 8rem från basregeln */
+  }
+
+  .social-list svg {
+    width: 1.5rem;         /* lås storleken direkt vid 1120px */
+    height: 1.5rem;
+    display: block;
+    flex: 0 0 auto;
+  }
 
 
-
-  
   .hero {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 3rem;
     gap: 10rem;
-    min-height: 60vh;
+    width: 100%;
+    max-width: 70rem;
+    margin-inline: auto;
+    padding-block: 6rem;
+    margin-top: 10rem;
   }
 
   .h1-index {
