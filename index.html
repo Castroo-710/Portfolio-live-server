@@ -7,38 +7,49 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./reset.css">
 </head>
 <body>
-  <header class="site-header">
-  <div class="header-bar container">
-    <p><span class="nollnollsju">{007}</span><br><span class="namn">Cristian C</span></br></p>
-    <button class="nav-toggle" aria-label="Meny">≡</button>
-  </div>
+   <div style="min-height:94vh; display:flex; flex-direction:column">
+    <header class="site-header">
+    <div class="header-bar container">
+      <p><span class="nollnollsju">{007}</span><br><span class="namn">Cristian C</span></p>
+      <button class="nav-toggle" aria-label="Meny">≡</button>
+    </div>
 
-  <nav id="primary-nav" class="site-nav">
-    <ul class="nav-list">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#tech">Technologies</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-
-    <ul class="social-list">
-      <li><a href="#x"><img src="./img/X.webp" alt="logo för twitter" class="twitter"></a></li>
-      <li><a href="#in"><img src="./img/linkedin.webp" alt="logo för linkedin" class="linkedin"></a></li>
-      <li><a href="#gh"><img src="./img/Github-light.webp" alt="logo för github" class="github"></a></li>
-    </ul>
-  </nav>
-</header>
-<main id="main" class="container">
-  <section id="home" class="hero">
-    <h1>Hej 👋<br>Mitt namn är </br><span class="highlight">Cristian</span>
-      <br class="p2">Jag skapar saker för webben</br></h1>
-    <span class="avatar-ring">
-      <img src="img/profilbild.jpeg" alt="Cristian C">
-    </span>
-  </section>
-</main>
+    <div class="nav-list-box">
+      <nav id="primary-nav" class="site-nav">
+        <div class="nav-menu">
+        <ul class="nav-list">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#tech">Technologies</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        </div>
+        <div class="nav-social">
+        <ul class="social-list">
+          <li><a href="#x"><img src="./img/X.webp" alt="logo för twitter" class="twitter"></a></li>
+          <li><a href="#in"><img src="./img/linkedin.webp" alt="logo för linkedin" class="linkedin"></a></li>
+          <li><a href="#gh"><img src="./img/Github-light.webp" alt="logo för github" class="github"></a></li>
+        </ul>
+        </div>
+      </nav>
+    </div>  
+    </header>
+      <main id="main" class="container">
+        <section id="home" class="hero">
+          <h1 class="h1-index">Hej 👋<br>Mitt namn är <span class="highlight">Cristian</span>
+            <br class="p2">Jag skapar saker för webben</h1>
+          <span class="avatar-ring">
+            <img src="img/profilbild.jpeg" alt="Cristian C">
+          </span>
+        </section>
+      </main>
+    </div>
+    <footer>
+      <p class="footer-text">Designed and Coded by Cristian C with <span class="love-caffeine text">Love & Caffeine</span></p>
+    </footer>
 </body>
 </html>
