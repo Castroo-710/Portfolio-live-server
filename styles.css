@@ -11,7 +11,8 @@
   --button-bg: #d7ffe0;
   --button-text: #018c0f;
   --radius: 9999px;
-  --container: 70rem;
+  --card-padding: 2rem;
+  --container: 72rem;
   --space-1: 0.25rem;
   --space-2: 0.5rem;
   --space-3: 0.75rem;
@@ -67,10 +68,12 @@ h3.role {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-inline: 2rem;
-  margin-bottom: 1rem;
-  margin-left: 1rem;
   flex-wrap: wrap;
+  padding-inline: 2rem;
+  margin-inline: auto;
+  max-width: var(--container);
+  width: 100%;
+  
 }
 
 .nollnollsju {
@@ -213,6 +216,25 @@ li {
   list-style: none;
 }
 
+.about-me {
+  margin-block: 4rem 2.5rem;
+}
+
+.about-me h1 {
+  font-size: 2.25rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin: 0 0 1;
+}
+
+.aboutme-text p {
+  color: var(--muted);
+  max-width: clamp(50ch, 70%, 80ch);
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  margin-inline: start;
+}
+
 .work-exp1 {
   display: flex;
   align-items: center;
@@ -300,12 +322,19 @@ li {
   opacity: 0.8;
 }
 
+.meta-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: .25rem;
+  margin-top: .25rem;
+}
+
 .dates {
   flex-basis: 100%;
   text-align: right;
   font-size: 0.875rem;
   color: var(--muted);
-  margin-top: var(--space-1);
+  margin-top: 0;
 }
 
 .job-meta {
@@ -348,14 +377,13 @@ li {
   font-weight: 800;
   margin: var(--space-6) 0 var(--space-4);
 }
-
 .projects .card {
   background: #fff;
   border: none;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 0.75rem;
   overflow: hidden; 
-  margin: var(--space-5);  
+  margin: var(--space-5); 
 }
 
 .card-media {
@@ -369,7 +397,7 @@ li {
   height: auto;
 }
 .card-body {
-  padding: 2rem;
+  padding: var(--card-padding)
 }
 
 .card-title {
@@ -400,12 +428,15 @@ li {
 
 .card-footer {
   display: flex;
-  align-items: space-between;
-  gap: var(--space-7);
-  margin-top: 0;
+  align-items: center;
+  gap: var(--space-3);
+  width: 100%;
+  padding: 0 var(--card-padding) var(--space-4);
+  flex-wrap: wrap;
+  row-gap: var(--space-3);
 }
 
-.chip-link {
+.chip-link, .ghost-link {
   display: inline-flex;
   align-items: center;
   gap: 0.5ch;
@@ -415,20 +446,13 @@ li {
   text-decoration: underline;
   color: var(--clr-text);
   white-space: nowrap;
+  flex: 0 0 auto;
+  margin: 0 !important; 
 }
 
-.ghost-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5ch;
-  padding: 0.375rem 2.75rem;
-  border-radius: var(--radius);
-  font-weight: 400;
-  text-decoration: underline;
-  color: var(--clr-text);
-  white-space: nowrap;
-  margin-left: 7rem;
-} 
+.card-footer .ghost-link{
+  margin-left:auto !important;
+}
 
 .icon {
   inline-size: 1rem;
@@ -439,6 +463,7 @@ li {
   font-size: 0.875rem;
   color: var(--muted);
   margin: var(--space-6) 0 var(--space-4);
+  padding: 2rem;
 }
 
 .love-caffeine {
@@ -496,6 +521,16 @@ li {
   align-items: baseline;
 }
 
+
+
+@media (max-width:40rem) {
+  .site-nav {
+    display: none;
+  }
+
+
+}
+
 @media (min-width: 70rem) {
  
   .nav-list-box {
@@ -515,10 +550,10 @@ li {
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 70rem;
+    max-width: var(--container);
     padding-inline: 2rem;
     gap: 3rem;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 
   .site-header .nav-list {
@@ -619,5 +654,58 @@ li {
     display: none;
   }
 
+   /* Gör meta-rader horisontella för varje .item */
+  .item .meta-row {
+    margin-bottom: 0; /* ingen vertikal spacing mellan company/location */
+  }
+
+  .item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  .item .meta-row:first-of-type,
+  .item .meta-row:last-of-type {
+    display: inline-flex;
+  }
+
+  .item .meta-row + .meta-row {
+    display: inline-flex;
+    margin-left: 1rem;
+  }
+
+  .meta-row {
+    align-items: center;
+    gap: 0.5ch;
+  }
+
+  .meta-grid {
+    grid-template-columns: 24ch 1fr;
+    column-gap: 2rem;
+    align-items: center;
+  }
+
+  .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 50px;
+
+  }
+
 }
 
+@media (min-width: 100rem) {
+  .projects {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: auto auto;
+      gap: 50px;
+      width: 100%;
+      }
+
+  .card {
+    
+  }
+}
